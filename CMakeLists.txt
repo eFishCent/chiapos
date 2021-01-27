@@ -147,3 +147,17 @@ endif()
 
 enable_testing()
 add_test(NAME RunTests COMMAND RunTests)
+
+execute_process (
+    COMMAND bash -c "gcc ${CMAKE_C_FLAGS} -Q --help=target |grep -E 'march=|mtune=' |head -n2 |sed 's/ //g'"
+    OUTPUT_VARIABLE gccOut
+)
+
+execute_process (
+    COMMAND bash -c "g++ ${CMAKE_CXX_FLAGS} -Q --help=target |grep -E 'march=|mtune=' |head -n2 |sed 's/ //g'"
+    OUTPUT_VARIABLE g++Out
+)
+
+message (
+    STATUS "\nc flags:\n${gccOut}\nc++ flags:\n${g++Out}"
+)
