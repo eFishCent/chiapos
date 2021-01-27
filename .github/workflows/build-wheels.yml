@@ -69,7 +69,7 @@ jobs:
         CIBW_BUILD: 'cp37-* cp38-* cp39-*'
         CIBW_SKIP: '*-manylinux_i686 *-win32'
         # we need boost
-        CIBW_BUILD_VERBOSITY_LINUX: 0
+        CIBW_BUILD_VERBOSITY_LINUX: 1
         CIBW_BUILD_VERBOSITY_MACOS: 0
         CIBW_BUILD_VERBOSITY_WINDOWS: 0
         CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
